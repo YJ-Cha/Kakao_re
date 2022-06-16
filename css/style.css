@@ -1,0 +1,491 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+body {
+    font-family: 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+}
+ul::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+a {
+    color: #000;
+}
+
+.ico_friends {
+    display: block;
+    background: url(../images/ico_friends.png) no-repeat 0 0 / 700px 800px;
+    font-size: 1px;
+    color: transparent;
+}
+
+.ico_dot {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: #FF5575;
+    font-size: 1px;
+    color: transparent;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#container {
+    height: 2000px;
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, #fff 50%, lightcoral 75%, lightskyblue);
+}
+
+header {
+    position: fixed;
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+}
+
+h1 {
+    text-align: center;
+    height: 46px;
+    line-height: 46px;
+}
+h1 a{
+    display: inline-block;
+    width: 147px;
+    height: 46px;
+    line-height: 46px;
+    background: url(../images/logo_kakaofriends.png) no-repeat center center / 147px 24px;
+    text-indent: -9999px;
+}
+
+h1 a span {
+    display: none;
+}
+
+.topLeft, .topRight {
+    position: absolute;
+    top: 6px;
+}
+.topLeft {
+    left: 12px;
+}
+
+.topLeft > button {
+    padding: 5px;
+}
+.topLeft .ico_friends {
+    width: 24px;
+    height: 24px;
+    background-position: -520px -60px;
+}
+.topLeft .ico_dot {
+    position: absolute;
+    top: 5px;
+    right: 3px;
+}
+
+.topRight {
+    right: 12px;
+}
+
+.topRight > button {
+    padding: 2px 3px;
+}
+
+.topRight .ico_friends {
+    width: 24px;
+    height: 24px;
+    background-position: -40px -20px;
+}
+
+.topRight .ico_global.ico_friends {
+    background-position: -440px -60px;
+}
+
+nav {
+    border-bottom: 1px solid #e2e0e0e0;
+}
+.list_tab {
+    display: flex;
+}
+.list_tab li {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+.list_tab li a {
+    display: block;
+    line-height:43px;
+    font-size: 16px;
+    color: inherit;
+}
+
+.list_tab li a.on {
+    font-weight: 700;
+}
+.list_tab li .ico_dot {
+    position: absolute;
+    top: 10px;
+    left: calc(50% + 15px);
+}
+
+
+.list_tab li a.on::after {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    position:relative; bottom:-1px;
+
+}
+
+
+main {
+    padding-top: 90px;
+}
+
+article {
+    background-color: #fff;
+}
+article .box {
+    padding: 20px;
+}
+.article_head {
+    overflow: hidden;
+    padding-bottom: 15px;
+}
+.article_head .profile {
+    float: left;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-indent: -9999px;
+    background: url(../images/character/charaImg02.png);
+    background-size: cover;
+    border-radius: 15px;
+}
+
+.article_head .info {
+    padding-left: 48px;
+}
+.article_head .info strong {
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+}
+.article_head .info .txt_time {
+    font-size: 13px;
+    color: #808080;
+}
+
+.article_con {}
+.article_con img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* 좌측 슬라이더 메뉴 부분 */
+
+.dark {
+    position: fixed;
+    inset: 0px; /* margin과 비슷, 안쪽으로 꽉 차있는 상태에서 줄어들면서 표현 */
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    display: none;
+}
+
+.gnb_open {
+    position: fixed;
+    top: 0;
+    left: -400px;
+    bottom: 0;
+    width: 400px;
+    background-color: #fff;
+    overflow: hidden;
+    z-index: 100;
+}
+.gnb_open .inner {
+    width: 418px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-right: 18px;
+    box-sizing: content-box;
+}
+
+.gnb_open img {
+    width: 100%;
+}
+
+.info_user {
+    padding: 35px 24px 24px;
+    overflow: hidden;
+}
+
+.info_user a {
+    line-height: 24px;
+}
+.info_user a.login {
+    float: left;
+    font-size: 16px;
+    font-weight: 700;
+}
+.info_user a.link_inquire {
+    float: right;
+    
+}
+.info_user a.link_inquire .ico_arrow_right {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-position: -320px 0;
+    vertical-align: middle;
+}
+
+.link_Banner {
+    display: block;
+    margin: 0 16px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.list_menu {
+    padding-top: 16px;
+}
+.list_menu button.btn_menu {
+    font-family: 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', Arial, Helvetica, sans-serif;
+}
+.list_menu .btn_menu {
+    display: block;
+    width: 100%;
+    padding: 0 24px;
+    line-height: 48px;
+    font-size: 16px;
+    text-align: left;
+    overflow: hidden;
+}
+
+.gnb_open .line::after {
+    content: "";
+    display: block;
+    margin: 16px 0;
+    background-color: #f0f0f0e0;
+    width: 100%;
+    height: 1px;
+}
+
+.list_menu .ico_arrow {
+    float: right;
+    width: 16px;
+    height: 14px;
+    margin-top: 16px;
+    background-position: -360px 0;
+}
+
+.list_menu .ico_arrow.on {
+    background-position: -340px 0;
+}
+
+.list_menu .btn_menu .ico_dot {
+    position: relative;
+    top: 12px;
+}
+
+.box_banner {
+    display: block;
+    margin: 30px 16px 0 16px;
+}
+
+.box_banner img {
+    border-radius: 8px;
+}
+
+.link_login {
+    display: block;
+    text-align: center;
+    line-height: 24px;
+    color: #9a9696;
+}
+
+.link_login .ico_lock {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-position: -560px -22px;
+    vertical-align: middle;
+    font-size: 1px;
+    color: transparent;
+}
+
+.characterWrap {
+    display: none;
+}
+.list_character {
+    width: 400px;
+    padding: 16px 10px 0;
+    box-sizing: border-box;
+}
+.list_character li {
+    float: left;
+    width: 20%;
+    padding-bottom: 20px;
+}
+.list_character li a {
+    display: block;
+    padding: 0 10px;
+}
+.list_character .img_character {
+    display: block;
+    width: 100%;
+    padding-top: 100%;
+    background: no-repeat 50% 50% / cover;
+    border-radius: 50%;
+}
+.list_character li.character01 .img_character {
+    background-image: url(../images/character/charaImg01.png);
+}
+.list_character li.character02 .img_character {
+    background-image: url(../images/character/charaImg02.png);
+}
+.list_character li.character03 .img_character {
+    background-image: url(../images/character/charaImg03.png);
+}
+.list_character li.character04 .img_character {
+    background-image: url(../images/character/charaImg04.png);
+}
+.list_character li.character05 .img_character {
+    background-image: url(../images/character/charaImg05.png);
+}
+.list_character li.character06 .img_character {
+    background-image: url(../images/character/charaImg06.png);
+}
+.list_character li.character07 .img_character {
+    background-image: url(../images/character/charaImg07.png);
+}
+.list_character li.character08 .img_character {
+    background-image: url(../images/character/charaImg08.png);
+}
+.list_character li.character09 .img_character {
+    background-image: url(../images/character/charaImg09.png);
+}
+.list_character li.character10 .img_character {
+    background-image: url(../images/character/charaImg10.png);
+}
+
+.list_character li.character01:hover .img_character {
+    background-image: url(../images/character/charaImgH01.png);
+}
+.list_character li.character02:hover .img_character {
+    background-image: url(../images/character/charaImgH02.png);
+}
+.list_character li.character03:hover .img_character {
+    background-image: url(../images/character/charaImgH03.png);
+}
+.list_character li.character04:hover .img_character {
+    background-image: url(../images/character/charaImgH04.png);
+}
+.list_character li.character05:hover .img_character {
+    background-image: url(../images/character/charaImgH05.png);
+}
+.list_character li.character06:hover .img_character {
+    background-image: url(../images/character/charaImgH06.png);
+}
+.list_character li.character07:hover .img_character {
+    background-image: url(../images/character/charaImgH07.png);
+}
+.list_character li.character08:hover .img_character {
+    background-image: url(../images/character/charaImgH08.png);
+}
+.list_character li.character09:hover .img_character {
+    background-image: url(../images/character/charaImgH09.png);
+}
+.list_character li.character10:hover .img_character {
+    background-image: url(../images/character/charaImgH10.png);
+}
+
+.list_character li .txt_character {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 8px;
+    color: #808080;
+}
+
+.categoryWrap {
+    display: none;
+}
+.list_category {
+    padding: 0 25px 20px;
+}
+.list_category li {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+}
+.list_category li a {
+    display: block;
+    font-size: 15px;
+    color:#808080;
+    padding: 15px 0;
+}
+
+.loginPop {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 310px;
+    background-color: #fff;
+    border-radius: 16px;
+    text-align: center;
+    padding: 40px 45px;
+    box-sizing: border-box;
+    display: none;
+    z-index: 101;
+}
+.loginPop img {
+    width: 128px;
+}
+.loginPop strong {
+    display: block;
+    margin-top: 7px;
+    font-size: 18px;
+}
+.loginPop p {
+    font-size: 15px;
+    margin: 13px 0 20px;
+}
+
+.loginPop button {
+    width: 100%;
+    background-color: #FFeb00;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 13px 0px;
+    border-radius: 30px;
+}
+.loginPop button .ico_kTalk {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-position: -480px -20px;
+    vertical-align: middle;
+}
