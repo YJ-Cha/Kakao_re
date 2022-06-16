@@ -215,15 +215,15 @@ article .box {
 .gnb_open {
     position: fixed;
     top: 0;
-    left: -400px;
+    left: -320px;
     bottom: 0;
-    width: 400px;
+    width: 320px;
     background-color: #fff;
     overflow: hidden;
     z-index: 100;
 }
 .gnb_open .inner {
-    width: 418px;
+    width: 338px;
     height: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -339,7 +339,7 @@ article .box {
     display: none;
 }
 .list_character {
-    width: 400px;
+    width: 320px;
     padding: 16px 10px 0;
     box-sizing: border-box;
 }

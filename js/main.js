@@ -5,7 +5,7 @@ $('.topLeft').click(function(){
 
 $('.dark').click(function(){
     $('.dark').fadeOut(200);
-    $('.gnb_open').animate({left: '-400px'},200);
+    $('.gnb_open').animate({left: '-320px'},200);
     $('.loginPop').hide();
 });
 
@@ -20,6 +20,6 @@ $('.btn_category').click(function(){
 });
 
 $('.log').click(function(){
-    $('.gnb_open').animate({left: '-400px'},200);
+    $('.gnb_open').animate({left: '-320px'},200);
     $('.loginPop').show();
 })
