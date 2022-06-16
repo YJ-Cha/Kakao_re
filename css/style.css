@@ -223,11 +223,11 @@ article .box {
     z-index: 100;
 }
 .gnb_open .inner {
-    width: 338px;
+    width: 328px;
     height: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
-    padding-right: 18px;
+    padding-right: 16px;
     box-sizing: content-box;
 }
 
@@ -311,7 +311,7 @@ article .box {
 
 .box_banner {
     display: block;
-    margin: 30px 16px 0 16px;
+    margin: 30px 16px 0;
 }
 
 .box_banner img {
